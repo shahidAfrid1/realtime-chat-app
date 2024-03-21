@@ -3,6 +3,7 @@ import { Icons } from "@/components/Icons";
 import MobileChatLayout from "@/components/MobileChatLayout";
 import SidebarChatList from "@/components/SidebarChatList";
 import SignOutButton from "@/components/SignOutButton";
+import Logo from "@/components/ui/Logo";
 import { getFriendsByUserId } from "@/helpers/get-friends-by-user-id";
 import { fetchRedis } from "@/helpers/redis";
 import { authOptions } from "@/lib/auth";
@@ -50,7 +51,7 @@ const Layout = async ({ children }: LayoutProps) => {
       </div>
       <div className="hidden md:flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
         <Link href="/dashboard" className="flex h-16 shrink-0 items-center">
-          RealTime ChatApp
+          <Logo />
         </Link>
 
         {friends.length > 0 ? (
@@ -121,7 +122,7 @@ const Layout = async ({ children }: LayoutProps) => {
           </ul>
         </nav>
       </div>
-      <aside className="max-h-screen container py-16 md:py-12 w-full">
+      <aside className="max-h-screen container py-16 md:py-5 w-full">
         {children}
       </aside>
     </div>

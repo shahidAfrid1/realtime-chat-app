@@ -14,6 +14,7 @@ import { Session } from "next-auth";
 import { SidebarOption } from "@/types/typings";
 import { usePathname } from "next/navigation";
 import FriendRequestsSidebarOption from "./FriendRequestsSidebarOption";
+import Logo from "./ui/Logo";
 
 interface MobileChatLayoutProps {
   friends: User[];
@@ -43,10 +44,14 @@ const MobileChatLayout: FC<MobileChatLayoutProps> = ({
           href="/dashboard"
           className={buttonVariants({ variant: "ghost" })}
         >
-          <Icons.Logo className="h-6 w-auto text-indigo-600" />
+          <Logo />
         </Link>
-        <Button onClick={() => setOpen(true)} className="gap-4">
-          Menu <Menu className="h-6 w-6" />
+        <Button
+          onClick={() => setOpen(true)}
+          variant={"ghost"}
+          className="gap-4"
+        >
+          <Menu className="h-6 w-6" />
         </Button>
       </div>
       <Transition.Root show={open} as={Fragment}>

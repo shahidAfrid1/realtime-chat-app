@@ -20,14 +20,17 @@ const page = async () => {
 
       return {
         senderId,
-        senderEmail: senderParsed.email,
+        senderName: senderParsed.name,
+        senderImage: senderParsed.image,
       };
     })
   );
 
   return (
-    <main className="pt-8">
-      <h1 className="font-bold text-5xl mb-8">Add a friend</h1>
+    <main className="pt-5">
+      <h1 className="font-bold text-3xl md:text-5xl mb-5">
+        Pending friends requests
+      </h1>
       <div className="flex flex-col gap-4">
         <FriendRequests
           incomingFriendRequests={incomingFriendRequests}
